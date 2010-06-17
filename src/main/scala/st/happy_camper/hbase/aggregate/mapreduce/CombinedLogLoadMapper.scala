@@ -8,7 +8,7 @@ import _root_.org.apache.hadoop.hbase.io.ImmutableBytesWritable
 import _root_.org.apache.hadoop.hbase.util.Bytes
 
 import _root_.org.apache.hadoop.io.{ LongWritable, Text }
-import _root_.org.apache.hadoop.mapreduce.Mapper
+import _root_.org.apache.hadoop.mapreduce.{ JobContext, Mapper }
 
 import _root_.scala.util.parsing.input.CharSequenceReader
 
@@ -20,9 +20,20 @@ class CombinedLogLoadMapper extends Mapper[LongWritable, Text, ImmutableBytesWri
     CombinedLogParser.parse(new CharSequenceReader(value.toString)) map {
       case CombinedLog(remoteHost, remoteUser, requestedTime, method, requestPath, protocol, statusCode, contentLength, referer, userAgent) => {
         val put = new Put(Bytes.toBytes(remoteHost))
-        put.add(Bytes.toBytes("log"), requestedTime.getTime, Bytes.toBytes(requestPath))
+        put.add(Bytes.toBytes("log"), Bytes.toBytes(CombinedLogLoadMapper.getDomain(context)), requestedTime.getTime, Bytes.toBytes(requestPath))
         context.write(new ImmutableBytesWritable(Bytes.toBytes(remoteHost)), put)
       }
     }
   }
+}
+
+object CombinedLogLoadMapper {
+
+  private val JOB_CONF_KEY_DOMAIN = getClass.getName + ".domain"
+
+  def setDomain(jobContext: JobContext, domain: String) {
+    jobContext.getConfiguration.set(JOB_CONF_KEY_DOMAIN, domain)
+  }
+
+  def getDomain(jobContext: JobContext) = jobContext.getConfiguration.get(JOB_CONF_KEY_DOMAIN)
 }

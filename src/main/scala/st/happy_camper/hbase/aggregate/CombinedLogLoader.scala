@@ -21,9 +21,11 @@ object CombinedLogLoader {
     val job = new Job(conf, "CombinedLog Loader")
     job.setJarByClass(getClass)
 
+    CombinedLogLoadMapper.setDomain(job, otherArgs(0))
+
     job.setMapperClass(classOf[CombinedLogLoadMapper])
     job.setInputFormatClass(classOf[TextInputFormat])
-    FileInputFormat.setInputPaths(job, new Path(otherArgs(0)))
+    FileInputFormat.setInputPaths(job, new Path(otherArgs(1)))
 
     job.setMapOutputKeyClass(classOf[ImmutableBytesWritable])
     job.setMapOutputValueClass(classOf[Put])
