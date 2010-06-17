@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>st.happy_camper.hadoop.hbase</groupId>
+	<groupId>st.happy_camper.hbase</groupId>
 	<artifactId>hbase-aggregate</artifactId>
 	<packaging>jar</packaging>
 	<name>hbase-aggregate</name>
@@ -76,6 +76,10 @@
 					<repositoryLayout>flat</repositoryLayout>
 					<repositoryName>lib</repositoryName>
 					<programs>
+						<program>
+							<mainClass>st.happy_camper.hbase.aggregate.CombinedLogLoader</mainClass>
+							<name>loader</name>
+						</program>
 						<program>
 							<mainClass>st.happy_camper.hbase.aggregate.Aggregator</mainClass>
 							<name>aggregator</name>
