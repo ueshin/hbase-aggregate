@@ -1,6 +1,7 @@
 package st.happy_camper.hbase.aggregate.mapreduce
 
-import _root_.st.happy_camper.hbase.aggregate.{ CombinedLog, CombinedLogWritable }
+import _root_.st.happy_camper.hbase.aggregate.entity.CombinedLog
+import _root_.st.happy_camper.hbase.aggregate.io.CombinedLogWritable
 import _root_.st.happy_camper.hbase.aggregate.parser.CombinedLogParser
 
 import _root_.org.apache.hadoop.hbase.client.Put

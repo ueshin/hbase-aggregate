@@ -1,4 +1,6 @@
-package st.happy_camper.hbase.aggregate
+package st.happy_camper.hbase.aggregate.io
+
+import _root_.st.happy_camper.hbase.aggregate.entity.CombinedLog
 
 import _root_.java.io.{ DataInput, DataOutput }
 import _root_.java.util.Date

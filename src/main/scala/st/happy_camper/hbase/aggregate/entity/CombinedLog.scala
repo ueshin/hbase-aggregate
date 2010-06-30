@@ -1,4 +1,4 @@
-package st.happy_camper.hbase.aggregate
+package st.happy_camper.hbase.aggregate.entity
 
 import _root_.java.util.Date
 

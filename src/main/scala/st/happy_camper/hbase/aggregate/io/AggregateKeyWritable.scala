@@ -1,4 +1,6 @@
-package st.happy_camper.hbase.aggregate.mapreduce
+package st.happy_camper.hbase.aggregate.io
+
+import _root_.st.happy_camper.hbase.aggregate.dto.AggregateKey
 
 import _root_.java.io.{ DataInput, DataOutput }
 import _root_.java.util.Date

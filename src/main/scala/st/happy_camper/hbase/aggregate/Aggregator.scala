@@ -1,6 +1,7 @@
 package st.happy_camper.hbase.aggregate
 
-import _root_.st.happy_camper.hbase.aggregate.mapreduce.{ AggregateMapper, AggregateKeyWritable, AggregateCombiner, AggregateReducer }
+import _root_.st.happy_camper.hbase.aggregate.io.AggregateKeyWritable
+import _root_.st.happy_camper.hbase.aggregate.mapreduce.{ AggregateMapper, AggregateCombiner, AggregateReducer }
 
 import _root_.org.apache.hadoop.hbase.HBaseConfiguration
 import _root_.org.apache.hadoop.hbase.client.Scan

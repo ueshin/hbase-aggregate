@@ -1,6 +1,7 @@
 package st.happy_camper.hbase.aggregate.mapreduce
 
-import _root_.st.happy_camper.hbase.aggregate.CombinedLogWritable
+import _root_.st.happy_camper.hbase.aggregate.dto.AggregateKey
+import _root_.st.happy_camper.hbase.aggregate.io.{ AggregateKeyWritable, CombinedLogWritable }
 
 import _root_.java.util.{ Calendar, Date }
 

@@ -1,4 +1,4 @@
-package st.happy_camper.hbase.aggregate.mapreduce
+package st.happy_camper.hbase.aggregate.dto
 
 import _root_.java.util.Date
 

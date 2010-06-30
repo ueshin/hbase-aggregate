@@ -1,5 +1,7 @@
 package st.happy_camper.hbase.aggregate.mapreduce
 
+import _root_.st.happy_camper.hbase.aggregate.io.AggregateKeyWritable
+
 import _root_.java.text.SimpleDateFormat
 
 import _root_.scala.collection.JavaConversions._

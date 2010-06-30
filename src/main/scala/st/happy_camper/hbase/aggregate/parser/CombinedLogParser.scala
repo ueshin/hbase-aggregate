@@ -1,6 +1,6 @@
 package st.happy_camper.hbase.aggregate.parser
 
-import _root_.st.happy_camper.hbase.aggregate.CombinedLog
+import _root_.st.happy_camper.hbase.aggregate.entity.CombinedLog
 
 import _root_.java.util.{ Date, Locale }
 import _root_.java.text.SimpleDateFormat
